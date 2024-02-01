@@ -1,6 +1,8 @@
 mod project_a;
+mod project_b;
 
 use project_a::handle_action_a;
+use project_b::handle_action_b;
 use structopt::StructOpt;
 use dialoguer::{theme::ColorfulTheme, Select};
 
@@ -18,7 +20,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     match selection {
         Some(0) => handle_action_a(),
-        Some(1) => println!("Bについての情報を表示します。"),
+        Some(1) => handle_action_b(),
         None => println!("選択がキャンセルされました。"),
         _ => {}
     }
